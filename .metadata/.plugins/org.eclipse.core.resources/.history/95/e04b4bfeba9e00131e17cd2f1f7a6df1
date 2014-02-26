@@ -1,0 +1,9 @@
+package no.morganbp.oblig1;
+
+public class MatrixMultiply {
+
+	public static void squareMatrixMultiplyRecursive(int[] a1, int[] a2) {
+		
+	}
+
+}

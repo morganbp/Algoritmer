@@ -1,0 +1,33 @@
+package no.morganbp.oblig1;
+
+public class MatrixMultiply {
+
+	public static int[] squareMatrixMultiplyRecursive(int[] a, int[] b) {
+		int n = (int) Math.sqrt(a.length);
+		int[] c = new int[n];
+		if(n == 1){
+			c[0] = a[0] * b[0];
+		}else{
+			int[] tmp1 = addMatrices(squareMatrixMultiplyRecursive(splitArray(a,0, 0),splitArray(b,0,0)), 
+					squareMatrixMultiplyRecursive(splitArray(a,0,1), splitArray(b,1,0)));
+			int[] tmp2 = addMatrices(squareMatrixMultiplyRecursive(splitArray(a,0, 0),splitArray(b,0,1)), 
+					squareMatrixMultiplyRecursive(splitArray(a,1,0), splitArray(b,1,1)));
+			int[] tmp3 = addMatrices(squareMatrixMultiplyRecursive(splitArray(a,1, 0),splitArray(b,0,n/2)), 
+					squareMatrixMultiplyRecursive(splitArray(a,1,0), splitArray(b,(n/2)+1,n)));
+			int[] tmp4 = addMatrices(squareMatrixMultiplyRecursive(splitArray(a,0, n/2),splitArray(b,0,n/2)), 
+					squareMatrixMultiplyRecursive(splitArray(a,0,n/2), splitArray(b,(n/2)+1,n)));
+		}
+	}
+
+	private static int[] addMatrices(int[] squareMatrixMultiplyRecursive,
+			int[] squareMatrixMultiplyRecursive2) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private static int[] splitArray(int[] b, int rad, int kolonne) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

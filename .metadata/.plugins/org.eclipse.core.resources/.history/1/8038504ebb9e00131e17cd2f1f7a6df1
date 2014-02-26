@@ -1,0 +1,9 @@
+package no.morganbp.oblig1;
+
+public class MatrixMultiply {
+
+	public static int[] squareMatrixMultiplyRecursive(int[] a, int[] b) {
+		int n = Math.sqrt((double)a.length);
+	}
+
+}

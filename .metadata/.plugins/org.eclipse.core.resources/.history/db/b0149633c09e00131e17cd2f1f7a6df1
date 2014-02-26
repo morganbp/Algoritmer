@@ -1,0 +1,33 @@
+package no.morganbp.oblig1;
+
+public class MatrixMultiply {
+
+	public static int[] squareMatrixMultiplyRecursive(int[] a, int[] b) {
+		int n = (int) Math.sqrt(a.length);
+		int[] c = new int[n];
+		if(n == 1){
+			c[0] = a[0] * b[0];
+		}else{
+			int[] tmp1 = addMatrices(squareMatrixMultiplyRecursive(splitArray(a,0, 0, n),splitArray(b,0,0,n)), 
+					squareMatrixMultiplyRecursive(splitArray(a,0,1,n), splitArray(b,1,0,n)));
+			int[] tmp2 = addMatrices(squareMatrixMultiplyRecursive(splitArray(a,0, 0,n),splitArray(b,0,1,n)), 
+					squareMatrixMultiplyRecursive(splitArray(a,0,1,n), splitArray(b,1,1,n)));
+			int[] tmp3 = addMatrices(squareMatrixMultiplyRecursive(splitArray(a,1, 0,n),splitArray(b,0,0,n)), 
+					squareMatrixMultiplyRecursive(splitArray(a,1,1,n), splitArray(b,0,1,n)));
+			int[] tmp4 = addMatrices(squareMatrixMultiplyRecursive(splitArray(a,1, 0,n),splitArray(b,0,1,n)), 
+					squareMatrixMultiplyRecursive(splitArray(a,1,1,n), splitArray(b,1,1,n)));
+		}
+		return c;
+	}
+
+	private static int[] addMatrices(int[] a,int[] b) {
+		
+		return null;
+	}
+
+	private static int[] splitArray(int[] b, int row, int col, int size) {
+		
+		return null;
+	}
+
+}

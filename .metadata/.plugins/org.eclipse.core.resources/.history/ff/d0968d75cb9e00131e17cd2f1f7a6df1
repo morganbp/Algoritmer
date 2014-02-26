@@ -1,0 +1,19 @@
+package no.morganbp.oblig1;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		int[] a = { 1, 2, 2, 2, 4, 2, 2, 4, 4, 2, 1, 4, 3, 2, 1, 5 };
+		int[] b = { 1, 2, 2, 2, 4, 2, 2, 4, 4, 2, 1, 4, 3, 2, 1, 5 };
+		int index;
+		int n = 16;
+		int col = 0;
+		int row = 0;
+		// int[] c = MatrixMultiply.squareMatrixMultiplyRecursive(a,b);
+		for (int i = 0; i < n; i++) {
+			index = (int) ((i % (Math.sqrt(n)) + ((i / (n / 2))*Math.sqrt(n))) + (col * (n / 4)) + ((2 * row * n)));
+			System.out.println(index);
+		}
+	}
+
+}
