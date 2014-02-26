@@ -1,0 +1,70 @@
+package no.morganbp.oblig1;
+
+public class MatrixMultiply {
+/*
+	public static int[] squareMatrixMultiplyRecursive(int[] a, int[] b) {
+		int size = a.length;
+		int n = (int)Math.sqrt(size);
+		int[] c = new int[size];
+		if(n == 1){
+			c[0] = a[0] * b[0];
+		}else{
+			int[] tmp1 = addMatrices(squareMatrixMultiplyRecursive(splitArray(a,0, 0, size),splitArray(b,0,0,size)), 
+					squareMatrixMultiplyRecursive(splitArray(a,0,1,size), splitArray(b,1,0,size)));
+			int[] tmp2 = addMatrices(squareMatrixMultiplyRecursive(splitArray(a,0, 0,size),splitArray(b,0,1,size)), 
+					squareMatrixMultiplyRecursive(splitArray(a,0,1,size), splitArray(b,1,1,size)));
+			int[] tmp3 = addMatrices(squareMatrixMultiplyRecursive(splitArray(a,1, 0,size),splitArray(b,0,0,size)), 
+					squareMatrixMultiplyRecursive(splitArray(a,1,1,size), splitArray(b,0,1,size)));
+			int[] tmp4 = addMatrices(squareMatrixMultiplyRecursive(splitArray(a,1, 0,size),splitArray(b,0,1,size)), 
+					squareMatrixMultiplyRecursive(splitArray(a,1,1,size), splitArray(b,1,1,size)));
+		}
+		return c;
+	}*/
+	public static int[][] squareMatrixMultiplyRecursive(int[][] a, int[][] b){
+		int size = a.length;
+		int[][] c = new int[size][size];
+		if(size == 1){
+			c[0][0] = a[0][0]*b[0][0];
+		}else{
+			int[][] a11 = new int[size/2][size/2];
+			int[][] a12 = new int[size/2][size/2];
+			int[][] a21 = new int[size/2][size/2];
+			int[][] a22 = new int[size/2][size/2];
+			int[][] b11 = new int[size/2][size/2];
+			int[][] b12 = new int[size/2][size/2];
+			int[][] b21 = new int[size/2][size/2];
+			int[][] b22 = new int[size/2][size/2];
+			for(int i = 0; i < size/2;i++){
+				for(int j = 0; i < size/2;j++){
+					a11[i][j] = a[i][j];
+					a12[i][j] = a[i][j+(size/2)];
+					a21[i][j] = a[i+(size/2)][j];
+					a22[i][j] = a[i+(size/2)][j+(size/2)];
+					b11[i][j] = b[i][j];
+					b12[i][j] = b[i][j+(size/2)];
+					b21[i][j] = b[i+(size/2)][j];
+					b22[i][j] = b[i+(size/2)][j+(size/2)];
+				}
+			}
+			int[][] c11 = new int[size/2][size/2]; 
+			
+		}
+		return c;
+	}
+	private static int[] addMatrices(int[] a,int[] b) {
+		
+		return null;
+	}
+
+	private static int[] splitArray(int[] b, int row, int col, int size) {
+		int n = size/4;
+		int[] split = new int[n];
+		int index;
+		for(int i = 0; i < n;i++){
+			index = (i%(n/2)) + (col*(n/2)) + (row*n);
+			split[i]=b[index];
+		}
+		return null;
+	}
+
+}
