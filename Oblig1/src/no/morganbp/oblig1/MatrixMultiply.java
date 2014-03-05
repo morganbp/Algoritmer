@@ -78,5 +78,13 @@ public class MatrixMultiply {
 
 		return c;
 	}
+	
+	public static int[][] squareMatrixMultiplyIndex(int[][] a, int[][] b) {
+		int length  = a.length;
+		int[][] c =  new int[length][length];
+		
+		return c;
+	}
+
 
 }
